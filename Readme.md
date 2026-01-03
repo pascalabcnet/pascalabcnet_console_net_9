@@ -31,11 +31,11 @@ dotnet build
 
 Для сборки под Net4.8 поменяйте строку 
 ```
-    <TargetFramework Condition="'$(BuildingInsideVisualStudio)' == 'true'">net9.0</TargetFramework>
+<TargetFramework Condition="'$(BuildingInsideVisualStudio)' == 'true'">net9.0</TargetFramework>
 ```
 на 
 ```
-    <TargetFramework Condition="'$(BuildingInsideVisualStudio)' == 'true'">net48</TargetFramework>
+<TargetFramework Condition="'$(BuildingInsideVisualStudio)' == 'true'">net48</TargetFramework>
 ```
 в `Directory.Build.props`.
 
