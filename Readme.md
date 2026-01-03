@@ -24,6 +24,15 @@ dotnet build -f net9.0
 
 # Сборка всех платформ
 dotnet build
+
+# Visual Studio
+Сборка осуществляется под NET 9.0
+
+Для сборки под Net4.8 поменяйте строку 
+    <TargetFramework Condition="'$(BuildingInsideVisualStudio)' == 'true'">net9.0</TargetFramework>
+на 
+    <TargetFramework Condition="'$(BuildingInsideVisualStudio)' == 'true'">net48</TargetFramework>
+в Directory.Build.props.
 ```
 
 
@@ -38,6 +47,7 @@ PascalABC.NET/
 ### 🔧 Конфигурация
 
 Проект использует `Directory.Build.props` для настройки путей сборки.
+
 Все выходные файлы помещаются в `bin/{framework}/`.
 
 ### 👤 Авторы
