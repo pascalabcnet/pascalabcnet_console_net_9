@@ -1,0 +1,2857 @@
+<?xml version="1.0" encoding="utf-16"?>
+<AspectFile Version="3">
+  <Node>
+    <Items>
+      <Node Name="Раздел интерфейса">
+        <Items>
+          <Node Name="Стандартные константы">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Стандартные константы # Standard constants</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Стандартные типы">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Стандартные типы # Standard types</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+            <Items>
+              <Node Name="Классы коллекций">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>List&lt;T&gt; = System.Collections.Generic.List&lt;T&gt;;</Text>
+                <OCtx>
+                  <i Type="Field">List &lt; T &gt; = System . Collections . Generic . List &lt; T &gt;</i>
+                  <i Type="">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="Action, Func и Predicate">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>Action0 = System.Action;</Text>
+                <OCtx>
+                  <i Type="Field">Action0 = System . Action</i>
+                  <i Type="">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="Regex">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>Regex = System.Text.RegularExpressions.Regex;</Text>
+                <OCtx>
+                  <i Type="Field">Regex = System . Text . RegularExpressions . Regex</i>
+                  <i Type="">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="Типы указателей">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>PBoolean  = ^boolean;//bool</Text>
+                <OCtx>
+                  <i Type="Field">PBoolean = ^ boolean</i>
+                  <i Type="">
+                  </i>
+                </OCtx>
+              </Node>
+            </Items>
+          </Node>
+          <Node Name="Интерфейс подсистемы ввода/вывода">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>IOSystem = interface</Text>
+            <OCtx>
+              <i Type="Class">IOSystem = interface</i>
+              <i Type="Defs">type</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="ClassMethod">function peek : integer</i>
+              <i Type="ClassMethod">function read_symbol : char</i>
+              <i Type="ClassMethod">procedure read ( var x : integer )</i>
+              <i Type="ClassMethod">procedure read ( var x : real )</i>
+              <i Type="ClassMethod">procedure read ( var x : char )</i>
+              <i Type="ClassMethod">procedure read ( var x : string )</i>
+              <i Type="ClassMethod">procedure read ( var x : byte )</i>
+              <i Type="ClassMethod">procedure read ( var x : shortint )</i>
+              <i Type="ClassMethod">procedure read ( var x : smallint )</i>
+              <i Type="ClassMethod">procedure read ( var x : word )</i>
+            </ICtx>
+          </Node>
+          <Node Name="Стандартная подсистема ввода-вывода">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>IOStandardSystem = class(IOSystem)</Text>
+            <OCtx>
+              <i Type="Class">IOStandardSystem = class ( IOSystem )</i>
+              <i Type="Defs">type</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">state : = 0</i>
+              <i Type="Field">sym : integer</i>
+              <i Type="ClassMethod">function peek : integer virtual</i>
+              <i Type="ClassMethod">function read_symbol : char virtual</i>
+              <i Type="ClassMethod">procedure read ( var x : integer ) virtual</i>
+              <i Type="ClassMethod">procedure read ( var x : real ) virtual</i>
+              <i Type="ClassMethod">procedure read ( var x : char ) virtual</i>
+              <i Type="ClassMethod">procedure read ( var x : string ) virtual</i>
+              <i Type="ClassMethod">procedure read ( var x : byte ) virtual</i>
+              <i Type="ClassMethod">procedure read ( var x : shortint ) virtual</i>
+            </ICtx>
+          </Node>
+          <Node Name="Класс текстового файла Text">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>Text = class</Text>
+            <OCtx>
+              <i Type="Class">Text = class</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Класс стандартного множества TypedSet">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>TypedSet = class (System.Collections.IEnumerable)</Text>
+            <OCtx>
+              <i Type="Class">TypedSet = class ( System . Collections . IEnumerable )</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Класс AbstractBinaryFile">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>AbstractBinaryFile = class</Text>
+            <OCtx>
+              <i Type="Class">AbstractBinaryFile = class</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Класс TypedFile">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>TypedFile = sealed class(AbstractBinaryFile)</Text>
+            <OCtx>
+              <i Type="Class">TypedFile = sealed class ( AbstractBinaryFile )</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Класс BinaryFile">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>BinaryFile = sealed class(AbstractBinaryFile)</Text>
+            <OCtx>
+              <i Type="Class">BinaryFile = sealed class ( AbstractBinaryFile )</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Класс Diapason">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>Diapason = record</Text>
+            <OCtx>
+              <i Type="Class">Diapason = record</i>
+              <i Type="Defs">type</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">low , high : integer</i>
+              <i Type="Field">clow , chigh : object</i>
+              <i Type="ClassMethod">constructor ( _low , _high : integer )</i>
+              <i Type="ClassMethod">constructor ( _low , _high : object )</i>
+            </ICtx>
+          </Node>
+          <Node Name="-----Начало секции интерфейса для документации">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//{{{ Начало секции интерфейса для документации }}}</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Подпрограммы ввода">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Подпрограммы ввода # Read subroutines</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+            <Items>
+              <Node Name="Ввод из текстового файла">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>procedure Read(f: Text);</Text>
+                <OCtx>
+                  <i Type="MethodHeader">procedure Read ( f : Text )</i>
+                  <i Type="">
+                  </i>
+                </OCtx>
+              </Node>
+            </Items>
+          </Node>
+          <Node Name="Подпрограммы вывода">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Подпрограммы вывода # Write subroutines</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Общие подпрограммы для работы с файлами">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Общие подпрограммы для работы с файлами # Common subroutines for files</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Подпрограммы для работы с текстовыми файлами">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//  Подпрограммы для работы с текстовыми файлами</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Подпрограммы для работы с двоичными файлами">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Подпрограммы для работы с двоичными файлами # Subroutines for binary files</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Cистемные подпрограммы">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function ParamCount: integer;</Text>
+            <OCtx>
+              <i Type="MethodHeader">function ParamCount : integer</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Функции для работы с именами файлов">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function ExtractFileName(fname: string): string;</Text>
+            <OCtx>
+              <i Type="MethodHeader">function ExtractFileName ( fname : string ) : string</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Математические подпрограммы">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function Sign(x: shortint): integer;</Text>
+            <OCtx>
+              <i Type="MethodHeader">function Sign ( x : shortint ) : integer</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Процедуры для работы со стандартными множествами">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>procedure Include(var s: TypedSet; el: object);</Text>
+            <OCtx>
+              <i Type="MethodHeader">procedure Include ( var s : TypedSet ; el : object )</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Подпрограммы для работы с символами">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Подпрограммы для работы с символами</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Подпрограммы для работы со строками">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Подпрограммы для работы со строками</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Общие подпрограммы">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>procedure Inc(var i: integer);</Text>
+            <OCtx>
+              <i Type="MethodHeader">procedure Inc ( var i : integer )</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Подпрограммы для работы с динамическими массивами">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function Low(i: System.Array): integer;</Text>
+            <OCtx>
+              <i Type="MethodHeader">function Low ( i : System . Array ) : integer</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Подпрограммы для генерации последовательностей">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Подпрограммы для генерации последовательностей # Subroutines for sequence generation</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Подпрограммы для генерации динамических массивов">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Подпрограммы для генерации динамических массивов # Subroutines for array of T generation</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Подпрограммы для генерации случайных матриц">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//     Подпрограммы для генерации случайных матриц</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Подпрограммы для создания кортежей">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Подпрограммы для создания кортежей # Subroutines for tuple generation</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Короткие функции Lst, HSet, SSet, Dict, KV">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Короткие функции Lst, HSet, SSet, Dict, KV # Short functions Lst, HSet, SSet, Dict, KV</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="-----Конец секции интерфейса для документации">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//{{{ Конец секции интерфейса для документации }}}</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Стандартные классы исключений">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//     Стандартные классы исключений</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Общедоступные переменные">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//     Общедоступные переменные</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+            <Items>
+              <Node Name="input, output">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>output: TextFile;</Text>
+                <OCtx>
+                  <i Type="Field">output : TextFile</i>
+                  <i Type="Defs">var</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+            </Items>
+          </Node>
+          <Node Name="Internal subprograms and variables">
+            <Items>
+              <Node Name="Internal System subprograms">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>//                  Internal System subprograms</Text>
+                <OCtx>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+                <ICtx>
+                  <i Type="Field">unit PABCSystem</i>
+                  <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+                  <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+                  <i Type="Field">MaxByte = byte . MaxValue</i>
+                  <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+                  <i Type="Field">MaxWord = word . MaxValue</i>
+                  <i Type="Field">MaxLongWord = longword . MaxValue</i>
+                  <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+                  <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+                  <i Type="Field">MaxDouble = real . MaxValue</i>
+                </ICtx>
+              </Node>
+              <Node Name="Internal typed sets operations">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>//                  Internal typed sets operations</Text>
+                <OCtx>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+                <ICtx>
+                  <i Type="Field">unit PABCSystem</i>
+                  <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+                  <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+                  <i Type="Field">MaxByte = byte . MaxValue</i>
+                  <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+                  <i Type="Field">MaxWord = word . MaxValue</i>
+                  <i Type="Field">MaxLongWord = longword . MaxValue</i>
+                  <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+                  <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+                  <i Type="Field">MaxDouble = real . MaxValue</i>
+                </ICtx>
+              </Node>
+              <Node Name="Internal for OpenMPSupport">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>//                  Internal for OpenMPSupport</Text>
+                <OCtx>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+                <ICtx>
+                  <i Type="Field">unit PABCSystem</i>
+                  <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+                  <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+                  <i Type="Field">MaxByte = byte . MaxValue</i>
+                  <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+                  <i Type="Field">MaxWord = word . MaxValue</i>
+                  <i Type="Field">MaxLongWord = longword . MaxValue</i>
+                  <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+                  <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+                  <i Type="Field">MaxDouble = real . MaxValue</i>
+                </ICtx>
+              </Node>
+              <Node Name="Internal classes">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>//                  Internal classes</Text>
+                <OCtx>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+                <ICtx>
+                  <i Type="Field">unit PABCSystem</i>
+                  <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+                  <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+                  <i Type="Field">MaxByte = byte . MaxValue</i>
+                  <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+                  <i Type="Field">MaxWord = word . MaxValue</i>
+                  <i Type="Field">MaxLongWord = longword . MaxValue</i>
+                  <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+                  <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+                  <i Type="Field">MaxDouble = real . MaxValue</i>
+                </ICtx>
+              </Node>
+              <Node Name="Internal procedures for PABCRTL.dll">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>//                  Internal procedures for PABCRTL.dll</Text>
+                <OCtx>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+                <ICtx>
+                  <i Type="Field">unit PABCSystem</i>
+                  <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+                  <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+                  <i Type="Field">MaxByte = byte . MaxValue</i>
+                  <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+                  <i Type="Field">MaxWord = word . MaxValue</i>
+                  <i Type="Field">MaxLongWord = longword . MaxValue</i>
+                  <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+                  <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+                  <i Type="Field">MaxDouble = real . MaxValue</i>
+                </ICtx>
+              </Node>
+            </Items>
+          </Node>
+          <Node Name="Print(Self: array [,] of real">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function Print(Self: array [,] of real; w: integer := 8; f: integer := 2): array [,] of real; extensionmethod;</Text>
+            <OCtx>
+              <i Type="Method">function Print ( Self : array [ , ] of real ; w : integer : = 8 ; f : integer : = 2 ) : array [ , ] of real extensionmethod</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Print">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function Print&lt;T&gt;(Self: array [,] of T; w: integer := 4): array [,] of T; extensionmethod;</Text>
+            <OCtx>
+              <i Type="Method">function Print &lt; T &gt; ( Self : array [ , ] of T ; w : integer : = 4 ) : array [ , ] of T extensionmethod</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Методы расширения типа array [,] ">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Методы расширения типа array [,] of T # Extension methods for array [,] of T</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+        </Items>
+      </Node>
+      <Node Name="Раздел реализации">
+        <FileName>\PABCSystem.pas</FileName>
+        <Text>implementation</Text>
+        <OCtx>
+          <i Type="PAS_TreeNode">
+          </i>
+        </OCtx>
+        <Items>
+          <Node Name="Внутренние переменные">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>rnd: System.Random;</Text>
+            <OCtx>
+              <i Type="Field">rnd : System . Random</i>
+              <i Type="Defs">var</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Константы ошибок">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>WRITELN_IN_BINARYFILE_ERROR_MESSAGE = 'Операция Writeln не применима к бинарным файлам!!Writeln is not applicable to binary files';</Text>
+            <OCtx>
+              <i Type="Field">WRITELN_IN_BINARYFILE_ERROR_MESSAGE =</i>
+              <i Type="Defs">const</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Internal functions">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                  Internal functions</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Методы класса Diapason">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>constructor Diapason.Create(_low, _high: integer);</Text>
+            <OCtx>
+              <i Type="Method">constructor Diapason . Create ( _low , _high : integer )</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Методы класса TypedSet">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>constructor TypedSet.Create;</Text>
+            <OCtx>
+              <i Type="Method">constructor TypedSet . Create</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Внутренние функции для работы с TypedSet ">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                  Typed Set functions</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Методы класса TypedFile">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>constructor TypedFile.Create(ElementType: System.Type);</Text>
+            <OCtx>
+              <i Type="Method">constructor TypedFile . Create ( ElementType : System . Type )</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Методы класса BinaryFile">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function BinaryFile.ToString: string;</Text>
+            <OCtx>
+              <i Type="Method">function BinaryFile . ToString : string</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Методы класса GCHandlersController">
+            <FileName>\PABCSystem.pas</FileName>
+            <OCtx>
+              <i Type="Method">constructor GCHandlersController . Create</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Функция StructuredObjectToString">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//              StructuredObjectToString</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Операции для типа String">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Operations for String</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Операции для array of T">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Операции для array of T</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Операции для List&lt;T&gt; ">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Операции для List&lt;T&gt;</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Операции для HashSet&lt;T&gt; ">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Операции для HashSet&lt;T&gt;</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Операции для SortedSet&lt;T&gt; ">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Операции для SortedSet&lt;T&gt;</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Операции для Dictionary&lt;K,V&gt;, SortedDictionary&lt;K,V&gt;, SortedList&lt;K,V&gt;">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Операции для Dictionary&lt;K,V&gt;, SortedDictionary&lt;K,V&gt;, SortedList&lt;K,V&gt;</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Операции для BigInteger">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Операции для BigInteger</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Операции для Complex">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Операции для Complex</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Операции для sequence of T">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Операции для sequence of T</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Операции для Func">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Операции для Func</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Операции для Tuple">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Операции для Tuple</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Функции для последовательностей и динамических массивов">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                Функции для последовательностей и динамических массивов</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Функции Rec для создания кортежей">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                Функции Rec для создания кортежей</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Функции Lst, Dict, KV, HSet, SSet">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                Функции Lst, Dict, KV, HSet, SSet</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Внутренние функции для работы с короткими строками ">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                Внутренние функции для работы с короткими строками</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="read_lexem">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                read_lexem</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="IOStandardSystem: implementation">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          IOStandardSystem: implementation</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="read - readln">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                  read - readln</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="TextFile methods">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                   TextFile methods</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="AbstractBinaryFile methods">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                AbstractBinaryFile methods</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="TypedFile &amp; BinaryFile methods">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                TypedFile &amp; BinaryFile methods</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Eoln - Eof">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                  Eoln - Eof</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="write - writeln">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                  write - writeln</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Print - Println">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                  Print - Println</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Text files">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                  Text files</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="ReadLines, ReadAllText, WriteLines, WriteAllText">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>// ReadLines, ReadAllText, WriteLines, WriteAllText</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="EnumerateFiles, EnumerateDirectories">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>// EnumerateFiles, EnumerateDirectories</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Abstract binary files">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                  Abstract binary files</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Typed files">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                  Typed files</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Binary files">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                  Binary files</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Operating System subroutines: implementation">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>// Operating System subroutines: implementation</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="File name functions">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                File name functions: implementation</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Mathematical functions">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                Mathematical functions: implementation</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Функции для работы с динамическими массивами">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                Dynamic arrays: implementation</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Подпрограммы для работы с символами и строками">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                Char and String: implementation</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Общие подпрограммы">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                Общие подпрограммы</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="-----Начало методов расширения">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//{{{ Начало методов расширения }}}</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Генерация бесконечных последовательностей">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                Генерация бесконечных последовательностей</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Методы расширения для sequence of T">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Методы расширения для sequence of T # Extension methods for sequence of T</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Методы расширения типа List&lt;T&gt;">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Методы расширения типа List&lt;T&gt; # Extension methods for List&lt;T&gt;</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Методы расширения типа array of T">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Методы расширения типа array of T # Extension methods for array of T</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Методы расширения типа array [,] of T">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Методы расширения типа array [,] of T # Extension methods for array [,] of T</Text>
+            <OCtx>
+              <i Type="Method">function Sin ( c : Complex ) : = Complex . Sin ( c )</i>
+              <i Type="Method">function Power ( c , power : Complex ) : = Complex . Pow ( c , power )</i>
+              <i Type="Method">function Log10 ( c : Complex ) : = Complex . Log10 ( c )</i>
+              <i Type="Method">function Log ( c : Complex ) : = Complex . Log ( c )</i>
+              <i Type="Method">function Exp ( c : Complex ) : = Complex . Exp ( c )</i>
+              <i Type="Method">function Cos ( c : Complex ) : = Complex . Cos ( c )</i>
+              <i Type="Method">function Conjugate ( c : Complex ) : = Complex . Conjugate ( c )</i>
+              <i Type="Method">function Abs ( c : Complex ) : = Complex . Abs ( c )</i>
+              <i Type="Method">function Sqrt ( c : Complex ) : = Complex . Sqrt ( c )</i>
+              <i Type="Method">function CplxFromPolar ( magnitude , phase : real ) : = Complex . FromPolarCoordinates ( magnitude , phase )</i>
+              <i Type="Method">function Cplx ( re , im : real ) : = new Complex ( re , im )</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Method">function Low ( i : System . Array ) : integer</i>
+              <i Type="Method">function High ( i : System . Array ) : integer</i>
+              <i Type="Method">function Length ( a : &amp;Array ) : integer</i>
+              <i Type="Method">function Length ( a : &amp;Array ; dim : integer ) : integer</i>
+              <i Type="Method">function Copy ( a : &amp;Array ) : &amp;Array</i>
+              <i Type="Method">procedure Sort &lt; T &gt; ( a : array of T )</i>
+              <i Type="Method">procedure Sort &lt; T &gt; ( a : array of T ; cmp : ( T , T ) - &gt; integer )</i>
+              <i Type="Method">procedure Sort &lt; T &gt; ( a : array of T ; less : ( T , T ) - &gt; boolean )</i>
+              <i Type="Method">procedure Sort &lt; T &gt; ( l : List &lt; T &gt; )</i>
+              <i Type="Method">procedure Sort &lt; T &gt; ( l : List &lt; T &gt; ; cmp : ( T , T ) - &gt; integer )</i>
+            </ICtx>
+          </Node>
+          <Node Name="Методы расширения типа integer">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Методы расширения типа integer # Extension methods for integer</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Методы расширения типа BigInteger">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                Методы расширения типа BigInteger</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Методы расширения типа real">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//&gt;&gt;     Методы расширения типа real # Extension methods for real</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Методы расширения типа char">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Методы расширения типа char</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Методы расширения типа string">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                Методы расширения типа string</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Методы расширения типа Func">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Методы расширения типа Func</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Методы расширения типа Tuple">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Методы расширения типа Tuple</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Методы расширения типа Complex">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Методы расширения типа Complex</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Методы расширения IDictionary">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                Методы расширения IDictionary</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="-----Конец методов расширения">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//{{{ Конец методов расширения }}}</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="------- Конец секции реализации прикладных методов">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//{{{ Конец секции реализации прикладных методов }}}</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Standard Exceptions: implementation">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                  Standard Exceptions: implementation</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Внутренние вспомогательные функции">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//                Внутренние вспомогательные функции</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Internal procedures for PABCRTL.dll: implementation">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>// Internal procedures for PABCRTL.dll: implementation</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+        </Items>
+      </Node>
+      <Node Name="Подсистема ввода-вывода">
+        <Items>
+          <Node Name="Интерфейс IOSystem подсистемы ввода/вывода">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>/// Интерфейс подсистемы ввода/вывода</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="IOStandardSystem  = class(IOSystem)">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>IOStandardSystem = class(IOSystem)</Text>
+            <OCtx>
+              <i Type="Class">IOStandardSystem = class ( IOSystem )</i>
+              <i Type="">
+              </i>
+            </OCtx>
+            <Items>
+              <Node Name="IOStandardSystem - реализация">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function IOStandardSystem.peek: integer;</Text>
+                <OCtx>
+                  <i Type="Method">function IOStandardSystem . peek : integer</i>
+                  <i Type="">
+                  </i>
+                </OCtx>
+              </Node>
+            </Items>
+          </Node>
+        </Items>
+      </Node>
+      <Node Name="Функции Seq">
+        <Items>
+          <Node Name="Seq - интерфейс">
+            <FileName>\PABCSystem.pas</FileName>
+            <OCtx>
+              <i Type="MethodHeader">function Seq &lt; T &gt; ( params a : array of T ) : sequence of T</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Seq - реализация">
+            <FileName>\PABCSystem.pas</FileName>
+            <OCtx>
+              <i Type="Method">function Seq &lt; T &gt; ( params a : array of T ) : sequence of T</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+        </Items>
+      </Node>
+      <Node Name="Обработка ошибок в PABCSystem">
+        <Items>
+          <Node Name="Константы ошибок">
+            <FileName>\PABCSystem.pas</FileName>
+            <OCtx>
+              <i Type="Defs">const</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">WRITELN_IN_BINARYFILE_ERROR_MESSAGE =</i>
+              <i Type="Field">InternalNullBasedArrayName =</i>
+              <i Type="Field">FILE_NOT_ASSIGNED =</i>
+              <i Type="Field">FILE_NOT_OPENED =</i>
+              <i Type="Field">FILE_NOT_OPENED_FOR_READING =</i>
+              <i Type="Field">FILE_NOT_OPENED_FOR_WRITING =</i>
+              <i Type="Field">RANGE_ERROR_MESSAGE =</i>
+              <i Type="Field">EOF_FOR_TEXT_WRITEOPENED =</i>
+              <i Type="Field">EOLN_FOR_TEXT_WRITEOPENED =</i>
+              <i Type="Field">SEEKEOF_FOR_TEXT_WRITEOPENED =</i>
+            </ICtx>
+          </Node>
+          <Node Name="GetTranslation">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function GetTranslation(message: string): string;</Text>
+            <OCtx>
+              <i Type="Method">function GetTranslation ( message : string ) : string</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+        </Items>
+      </Node>
+      <Node Name="Ввод-вывод в текстовый файл">
+        <Items>
+          <Node Name="read (f: Text ...">
+            <Items>
+              <Node Name="read(f: Text)">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>procedure read(f: Text);</Text>
+                <OCtx>
+                  <i Type="Method">procedure read ( f : Text )</i>
+                  <i Type="">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="read_lexem">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function read_lexem(f: Text): string;</Text>
+                <OCtx>
+                  <i Type="Method">function read_lexem ( f : Text ) : string</i>
+                  <i Type="">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="procedure read(f: Text; var x: string);">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>procedure read(f: Text; var x: string);</Text>
+                <OCtx>
+                  <i Type="Method">procedure read ( f : Text ; var x : string )</i>
+                  <i Type="">
+                  </i>
+                </OCtx>
+              </Node>
+            </Items>
+          </Node>
+          <Node Name="write (f: Text ...">
+            <Items>
+              <Node Name="procedure write(f: Text);">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>procedure write(f: Text);</Text>
+                <OCtx>
+                  <i Type="Method">procedure write ( f : Text )</i>
+                  <i Type="">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="procedure write(f: Text; val: object);">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>procedure write(f: Text; val: object);</Text>
+                <OCtx>
+                  <i Type="Method">procedure write ( f : Text ; val : object )</i>
+                  <i Type="">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="StructuredObjectToString">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function StructuredObjectToString(o: Object; n: integer := 0): string;</Text>
+                <OCtx>
+                  <i Type="Method">function StructuredObjectToString ( o : Object ; n : integer : = 0 ) : string</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+                <ICtx>
+                  <i Type="Field">nmax = 100</i>
+                  <i Type="Field">nmax1 = 50</i>
+                  <i Type="Defs">const</i>
+                </ICtx>
+              </Node>
+            </Items>
+          </Node>
+        </Items>
+      </Node>
+      <Node Name="Методы расширения">
+        <Items>
+          <Node Name="Методы расширения для char">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function char.ToDigit(self: char): integer; extensionmethod;</Text>
+            <OCtx>
+              <i Type="Method">function char . ToDigit ( self : char ) : integer extensionmethod</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Методы расширения для string">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function string.ToInteger: integer;</Text>
+            <OCtx>
+              <i Type="Method">function string . ToInteger : integer</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <Items>
+              <Node Name="Операции со строками как методы расширения">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>// Extension methods for String</Text>
+                <OCtx>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="Extension methods for String 3 - read">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function ReadIntegerFromString(s: string; var from: integer): integer;</Text>
+                <OCtx>
+                  <i Type="Method">function ReadIntegerFromString ( s : string ; var from : integer ) : integer</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+            </Items>
+          </Node>
+        </Items>
+      </Node>
+      <Node Name="Операции">
+        <Items>
+          <Node Name="Операции над строками">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>procedure string.operator+=(var left: string; right: string);</Text>
+            <OCtx>
+              <i Type="Method">procedure string . operator + = ( var left : string ; right : string )</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Операции с BigInteger">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function BigInteger.operator&gt;(p: BigInteger; q: integer): boolean;</Text>
+            <OCtx>
+              <i Type="Method">function BigInteger . operator &gt; ( p : BigInteger ; q : integer ) : boolean</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Операции над последовательностями">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function System.Collections.Generic.IEnumerable&lt;T&gt;.operator+(a,b: sequence of T): sequence of T;</Text>
+            <OCtx>
+              <i Type="Method">function operator + &lt; T &gt; ( a , b : sequence of T ) : sequence of T extensionmethod</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Операции для HashSet, SortedSet">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function HashSet&lt;T&gt;.operator in(x: T; Self: HashSet&lt;T&gt;): boolean;</Text>
+            <OCtx>
+              <i Type="Method">function HashSet &lt; T &gt; . operator in ( x : T ; Self : HashSet &lt; T &gt; ) : boolean</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Операции для Tuple">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Операции для Tuple</Text>
+            <OCtx>
+              <i Type="Method">function Low ( self : System . Array ) extensionmethod : = Low ( Self )</i>
+              <i Type="Method">function High ( self : System . Array ) extensionmethod : = High ( Self )</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Method">function CreateSliceFromArrayInternal &lt; T &gt; ( Self : array of T ; from , step , count : integer ) : array of T</i>
+              <i Type="Method">function SliceArrayImpl &lt; T &gt; ( Self : array of T ; from , step , count : integer ) : array of T</i>
+              <i Type="Method">function Slice &lt; T &gt; ( Self : array of T ; from , step : integer ) : array of T extensionmethod</i>
+              <i Type="Method">function Slice &lt; T &gt; ( Self : array of T ; from , step , count : integer ) : array of T extensionmethod</i>
+              <i Type="Method">function SystemSliceArrayImpl &lt; T &gt; ( Self : array of T ; situation : integer ; from , &amp;to : integer ; step : integer : = 1 ) : array of T</i>
+              <i Type="Method">function SystemSlice &lt; T &gt; ( Self : array of T ; situation : integer ; from , &amp;to : integer ) : array of T extensionmethod</i>
+              <i Type="Method">function SystemSlice &lt; T &gt; ( Self : array of T ; situation : integer ; from , &amp;to , step : integer ) : array of T extensionmethod</i>
+              <i Type="Method">function SystemSliceArrayImplQuestion &lt; T &gt; ( Self : array of T ; situation : integer ; from , &amp;to : integer ; step : integer : = 1 ) : array of T</i>
+              <i Type="Method">function SystemSliceQuestion &lt; T &gt; ( Self : array of T ; situation : integer ; from , &amp;to : integer ) : array of T extensionmethod</i>
+              <i Type="Method">function SystemSliceQuestion &lt; T &gt; ( Self : array of T ; situation : integer ; from , &amp;to , step : integer ) : array of T extensionmethod</i>
+            </ICtx>
+          </Node>
+          <Node Name="Операции для List&lt;T&gt; ">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Операции для List&lt;T&gt;</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Операции для HashSet&lt;T&gt; ">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Операции для HashSet&lt;T&gt;</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Операции для SortedSet&lt;T&gt; ">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Операции для SortedSet&lt;T&gt;</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Операции для Dictionary&lt;K,V&gt;, SortedDictionary&lt;K,V&gt;, SortedList&lt;K,V&gt;">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>//          Операции для Dictionary&lt;K,V&gt;, SortedDictionary&lt;K,V&gt;, SortedList&lt;K,V&gt;</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+        </Items>
+      </Node>
+      <Node Name="BigInteger">
+        <Items>
+          <Node Name="Операции с BigInteger">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>// Операции для BigInteger</Text>
+            <OCtx>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+            <ICtx>
+              <i Type="Field">unit PABCSystem</i>
+              <i Type="Field">uses System . Runtime . InteropServices , System . IO , System . Collections , System . Collections . Generic , System</i>
+              <i Type="Field">MaxShortInt = shortint . MaxValue</i>
+              <i Type="Field">MaxByte = byte . MaxValue</i>
+              <i Type="Field">MaxSmallInt = smallint . MaxValue</i>
+              <i Type="Field">MaxWord = word . MaxValue</i>
+              <i Type="Field">MaxLongWord = longword . MaxValue</i>
+              <i Type="Field">MaxInt64 = int64 . MaxValue</i>
+              <i Type="Field">MaxUInt64 = uint64 . MaxValue</i>
+              <i Type="Field">MaxDouble = real . MaxValue</i>
+            </ICtx>
+          </Node>
+          <Node Name="Abs">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function Abs(x: BigInteger): BigInteger;</Text>
+            <OCtx>
+              <i Type="MethodHeader">function Abs ( x : BigInteger ) : BigInteger</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Power">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function Power(x: BigInteger; y: integer): BigInteger;</Text>
+            <OCtx>
+              <i Type="MethodHeader">function Power ( x : BigInteger ; y : integer ) : BigInteger</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Sqr">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function Sqr(x: BigInteger): BigInteger;</Text>
+            <OCtx>
+              <i Type="MethodHeader">function Sqr ( x : BigInteger ) : BigInteger</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Odd">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function Odd(i: BigInteger): boolean;</Text>
+            <OCtx>
+              <i Type="MethodHeader">function Odd ( i : BigInteger ) : boolean</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Max">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function Max(a, b: BigInteger): BigInteger;</Text>
+            <OCtx>
+              <i Type="MethodHeader">function Max ( a , b : BigInteger ) : BigInteger</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Min">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function Min(a, b: BigInteger): BigInteger;</Text>
+            <OCtx>
+              <i Type="MethodHeader">function Min ( a , b : BigInteger ) : BigInteger</i>
+              <i Type="">
+              </i>
+            </OCtx>
+          </Node>
+        </Items>
+      </Node>
+      <Node Name="Короткие функции">
+        <Items>
+          <Node Name="Arr">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function Arr&lt;T&gt;(params a: array of T): array of T;</Text>
+            <OCtx>
+              <i Type="Method">function Arr &lt; T &gt; ( params a : array of T ) : array of T</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Seq">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function Seq&lt;T&gt;(params a: array of T): sequence of T;</Text>
+            <OCtx>
+              <i Type="Method">function Seq &lt; T &gt; ( params a : array of T ) : sequence of T</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="HSet">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function HSet&lt;T&gt;(params a: array of T): HashSet&lt;T&gt;;</Text>
+            <OCtx>
+              <i Type="Method">function HSet &lt; T &gt; ( params a : array of T ) : HashSet &lt; T &gt;</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="SSet">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function SSet&lt;T&gt;(params a: array of T): HashSet&lt;T&gt;;</Text>
+            <OCtx>
+              <i Type="Method">function SSet &lt; T &gt; ( params a : array of T ) : HashSet &lt; T &gt;</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Dict">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function Dict&lt;TKey, TVal&gt;(params pairs: array of KeyValuePair&lt;TKey, TVal&gt;): Dictionary&lt;TKey, TVal&gt;;</Text>
+            <OCtx>
+              <i Type="Method">function Dict &lt; TKey , TVal &gt; ( params pairs : array of KeyValuePair &lt; TKey , TVal &gt; ) : Dictionary &lt; TKey , TVal &gt;</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="KV">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function KV&lt;TKey, TVal&gt;(key: TKey; value: TVal): KeyValuePair&lt;TKey, TVal&gt;;</Text>
+            <OCtx>
+              <i Type="Method">function KV &lt; TKey , TVal &gt; ( key : TKey ; value : TVal ) : KeyValuePair &lt; TKey , TVal &gt;</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+        </Items>
+      </Node>
+      <Node Name="Slices">
+        <Items>
+          <Node Name="CreateSliceFromListInternal">
+            <FileName>\PABCSystem.pas</FileName>
+            <OCtx>
+              <i Type="Method">function CreateSliceFromListInternal &lt; T &gt; ( Self : List &lt; T &gt; ; from , step , count : integer ) : List &lt; T &gt;</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="CreateSliceFromArrayInternal">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function CreateSliceFromArrayInternal&lt;T&gt;(Self: array of T; from,step,count: integer): array of T;</Text>
+            <OCtx>
+              <i Type="Method">function CreateSliceFromArrayInternal &lt; T &gt; ( Self : array of T ; from , step , count : integer ) : array of T</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="CreateSliceFromStringInternal">
+            <FileName>\PABCSystem.pas</FileName>
+            <Text>function CreateSliceFromStringInternal&lt;T&gt;(Self: string; from,count,step: integer): string;</Text>
+            <OCtx>
+              <i Type="Method">function CreateSliceFromStringInternal ( Self : string ; from , step , count : integer ) : string</i>
+              <i Type="Method">function Low ( self : System . Array ) extensionmethod : = Low ( Self )</i>
+              <i Type="Method">function High ( self : System . Array ) extensionmethod : = High ( Self )</i>
+              <i Type="PAS_TreeNode">
+              </i>
+            </OCtx>
+          </Node>
+          <Node Name="Slice">
+            <Items>
+              <Node Name="SliceListImpl&lt;T&gt;(Self: List&lt;T&gt;">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function SliceListImpl&lt;T&gt;(Self: List&lt;T&gt;; from,step,count: integer): List&lt;T&gt;;</Text>
+                <OCtx>
+                  <i Type="Method">function SliceListImpl &lt; T &gt; ( Self : List &lt; T &gt; ; from , step , count : integer ) : List &lt; T &gt;</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="SliceArrayImpl&lt;T&gt;(Self: array of T">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function SliceArrayImpl&lt;T&gt;(Self: array of T; from,step,count: integer): array of T;</Text>
+                <OCtx>
+                  <i Type="Method">function SliceArrayImpl &lt; T &gt; ( Self : array of T ; from , step , count : integer ) : array of T</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="SliceStringImpl(Self: string">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function SliceStringImpl(Self: string; from,step,count: integer): string;</Text>
+                <OCtx>
+                  <i Type="Method">function SliceStringImpl ( Self : string ; from , step , count : integer ) : string</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="Slice&lt;T&gt;(Self: sequence of T">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function Slice&lt;T&gt;(Self: sequence of T; from,step: integer): sequence of T; extensionmethod;</Text>
+                <OCtx>
+                  <i Type="Method">function Slice &lt; T &gt; ( Self : sequence of T ; from , step : integer ) : sequence of T extensionmethod</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="Slice&lt;T&gt;(Self: List&lt;T&gt;">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function Slice&lt;T&gt;(Self: List&lt;T&gt;; from,step,count: integer): List&lt;T&gt;; extensionmethod;</Text>
+                <OCtx>
+                  <i Type="Method">function Slice &lt; T &gt; ( Self : List &lt; T &gt; ; from , step , count : integer ) : List &lt; T &gt; extensionmethod</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="Slice&lt;T&gt;(Self: array of T">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function Slice&lt;T&gt;(Self: array of T; from,step: integer): array of T; extensionmethod;</Text>
+                <OCtx>
+                  <i Type="Method">function Slice &lt; T &gt; ( Self : array of T ; from , step : integer ) : array of T extensionmethod</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="Slice(Self: string;">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function Slice(Self: string; from,step: integer): string; extensionmethod;</Text>
+                <OCtx>
+                  <i Type="Method">function Slice ( Self : string ; from , step : integer ) : string extensionmethod</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+            </Items>
+          </Node>
+          <Node Name="SystemSlice">
+            <Items>
+              <Node Name="CalcCountForSystemSlice">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function CalcCountForSystemSlice(situation: integer; Len: integer; var from,&amp;to: integer; step: integer): integer;</Text>
+                <OCtx>
+                  <i Type="Method">function CheckAndCorrectFromToAndCalcCountForSystemSlice ( situation : integer ; Len : integer ; var from , &amp;to : integer ; step : integer ) : integer</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="SystemSliceListImpl">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function SystemSliceListImpl&lt;T&gt;(Self: List&lt;T&gt;; situation: integer; from,&amp;to: integer; step: integer := 1): List&lt;T&gt;;</Text>
+                <OCtx>
+                  <i Type="Method">function SystemSliceListImpl &lt; T &gt; ( Self : List &lt; T &gt; ; situation : integer ; from , &amp;to : integer ; step : integer : = 1 ) : List &lt; T &gt;</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="SystemSliceArrayImpl">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function SystemSliceArrayImpl&lt;T&gt;(Self: array of T; situation: integer; from,&amp;to: integer; step: integer := 1): array of T;</Text>
+                <OCtx>
+                  <i Type="Method">function SystemSliceArrayImpl &lt; T &gt; ( Self : array of T ; situation : integer ; from , &amp;to : integer ; step : integer : = 1 ) : array of T</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="SystemSliceStringImpl">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function SystemSliceStringImpl(Self: string; situation: integer; from,&amp;to: integer; step: integer := 1): string;</Text>
+                <OCtx>
+                  <i Type="Method">function SystemSliceStringImpl ( Self : string ; situation : integer ; from , &amp;to : integer ; step : integer : = 1 ) : string</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="SystemSlice&lt;T&gt;(Self: List&lt;T&gt;">
+                <FileName>\PABCSystem.pas</FileName>
+                <OCtx>
+                  <i Type="Method">function SystemSlice &lt; T &gt; ( Self : List &lt; T &gt; ; situation : integer ; from , &amp;to : integer ) : List &lt; T &gt; extensionmethod</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="SystemSlice&lt;T&gt;(Self: array of T">
+                <FileName>\PABCSystem.pas</FileName>
+                <OCtx>
+                  <i Type="Method">function SystemSlice &lt; T &gt; ( Self : array of T ; situation : integer ; from , &amp;to : integer ) : array of T extensionmethod</i>
+                  <i Type="Method">function Low ( self : System . Array ) extensionmethod : = Low ( Self )</i>
+                  <i Type="Method">function High ( self : System . Array ) extensionmethod : = High ( Self )</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="SystemSlice(Self: string">
+                <FileName>\PABCSystem.pas</FileName>
+                <OCtx>
+                  <i Type="Method">function SystemSlice ( Self : string ; situation : integer ; from , &amp;to : integer ) : string extensionmethod</i>
+                  <i Type="Method">function Low ( self : System . Array ) extensionmethod : = Low ( Self )</i>
+                  <i Type="Method">function High ( self : System . Array ) extensionmethod : = High ( Self )</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+            </Items>
+          </Node>
+          <Node Name="SystemSliceQuestion">
+            <Items>
+              <Node Name="CheckStepAndCorrectFromTo">
+                <FileName>\PABCSystem.pas</FileName>
+                <OCtx>
+                  <i Type="Method">procedure CheckStepAndCorrectFromTo ( situation : integer ; Len : integer ; var from , &amp;to : integer ; step : integer )</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="SystemSliceListImplQuestion">
+                <FileName>\PABCSystem.pas</FileName>
+                <OCtx>
+                  <i Type="Method">function SystemSliceListImplQuestion &lt; T &gt; ( Self : List &lt; T &gt; ; situation : integer ; from , &amp;to : integer ; step : integer : = 1 ) : List &lt; T &gt;</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="SystemSliceQuestion&lt;T&gt;(Self: List&lt;T&gt;">
+                <FileName>\PABCSystem.pas</FileName>
+                <OCtx>
+                  <i Type="Method">function SystemSliceQuestion &lt; T &gt; ( Self : List &lt; T &gt; ; situation : integer ; from , &amp;to : integer ) : List &lt; T &gt; extensionmethod</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="SystemSliceArrayImplQuestion">
+                <FileName>\PABCSystem.pas</FileName>
+                <OCtx>
+                  <i Type="Method">function SystemSliceArrayImplQuestion &lt; T &gt; ( Self : array of T ; situation : integer ; from , &amp;to : integer ; step : integer : = 1 ) : array of T</i>
+                  <i Type="Method">function Low ( self : System . Array ) extensionmethod : = Low ( Self )</i>
+                  <i Type="Method">function High ( self : System . Array ) extensionmethod : = High ( Self )</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="SystemSliceQuestion&lt;T&gt;(Self: array of T">
+                <FileName>\PABCSystem.pas</FileName>
+                <OCtx>
+                  <i Type="Method">function SystemSliceQuestion &lt; T &gt; ( Self : array of T ; situation : integer ; from , &amp;to : integer ) : array of T extensionmethod</i>
+                  <i Type="Method">function Low ( self : System . Array ) extensionmethod : = Low ( Self )</i>
+                  <i Type="Method">function High ( self : System . Array ) extensionmethod : = High ( Self )</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="SystemSliceStringImplQuestion">
+                <FileName>\PABCSystem.pas</FileName>
+                <OCtx>
+                  <i Type="Method">function SystemSliceStringImplQuestion ( Self : string ; situation : integer ; from , &amp;to : integer ; step : integer : = 1 ) : string</i>
+                  <i Type="Method">function Low ( self : System . Array ) extensionmethod : = Low ( Self )</i>
+                  <i Type="Method">function High ( self : System . Array ) extensionmethod : = High ( Self )</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="SystemSliceQuestion(Self: string">
+                <FileName>\PABCSystem.pas</FileName>
+                <OCtx>
+                  <i Type="Method">function SystemSliceQuestion ( Self : string ; situation : integer ; from , &amp;to : integer ) : string extensionmethod</i>
+                  <i Type="Method">function Low ( self : System . Array ) extensionmethod : = Low ( Self )</i>
+                  <i Type="Method">function High ( self : System . Array ) extensionmethod : = High ( Self )</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="CorrectFromTo">
+                <FileName>\PABCSystem.pas</FileName>
+                <OCtx>
+                  <i Type="Method">procedure CorrectFromTo ( situation : integer ; Len : integer ; var from , &amp;to : integer ; step : integer )</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+              <Node Name="CorrectFromToAndCalcCountForSystemSliceQuestion">
+                <FileName>\PABCSystem.pas</FileName>
+                <Text>function CorrectFromToAndCalcCountForSystemSliceQuestion(situation: integer; Len: integer; var from,&amp;to: integer; step: integer): integer;</Text>
+                <OCtx>
+                  <i Type="Method">function CorrectFromToAndCalcCountForSystemSliceQuestion ( situation : integer ; Len : integer ; var from , &amp;to : integer ; step : integer ) : integer</i>
+                  <i Type="PAS_TreeNode">
+                  </i>
+                </OCtx>
+              </Node>
+            </Items>
+          </Node>
+        </Items>
+      </Node>
+      <Node Name="read_lexem">
+        <FileName>\PABCSystem.pas</FileName>
+        <Text>function read_lexem: string;// SSM 08.03.11 - пытаюсь исправить с peekом ситуацию с вводом '1 hello'. Должно работать</Text>
+        <OCtx>
+          <i Type="Method">function read_lexem : string</i>
+          <i Type="">
+          </i>
+        </OCtx>
+      </Node>
+      <Node Name="Функция Ident">
+        <FileName>\PABCSystem.pas</FileName>
+        <Text>function Ident&lt;T1&gt;(x: T1): T1;</Text>
+        <OCtx>
+          <i Type="Method">function Ident &lt; T &gt; ( x : T ) : T</i>
+          <i Type="">
+          </i>
+        </OCtx>
+      </Node>
+      <Node Name="function Copy(a: &amp;Array)">
+        <FileName>\PABCSystem.pas</FileName>
+        <Text>function Copy(a: &amp;Array): &amp;Array;</Text>
+        <OCtx>
+          <i Type="Method">function Copy ( a : &amp;Array ) : &amp;Array</i>
+          <i Type="">
+          </i>
+        </OCtx>
+      </Node>
+      <Node Name="procedure Sort">
+        <FileName>\PABCSystem.pas</FileName>
+        <Text>procedure Sort(a: &amp;Array);</Text>
+        <OCtx>
+          <i Type="MethodHeader">procedure Sort &lt; T &gt; ( a : array of T )</i>
+          <i Type="PAS_TreeNode">
+          </i>
+        </OCtx>
+      </Node>
+      <Node Name="write(f: Text">
+        <FileName>\PABCSystem.pas</FileName>
+        <Text>f.sw.Write(</Text>
+        <OCtx>
+          <i Type="Method">procedure write ( f : Text ; val : object )</i>
+          <i Type="PAS_TreeNode">
+          </i>
+        </OCtx>
+      </Node>
+      <Node Name="FormatValue">
+        <FileName>\PABCSystem.pas</FileName>
+        <Text>function FormatValue(value: object; NumOfChars: integer): string;</Text>
+        <OCtx>
+          <i Type="Method">function FormatValue ( value : object ; NumOfChars : integer ) : string</i>
+          <i Type="PAS_TreeNode">
+          </i>
+        </OCtx>
+      </Node>
+      <Node Name="StructuredObjectToString">
+        <FileName>\PABCSystem.pas</FileName>
+        <Text>function StructuredObjectToString(o: Object; n: integer := 0): string;</Text>
+        <OCtx>
+          <i Type="Method">function StructuredObjectToString ( o : Object ; n : integer : = 0 ) : string</i>
+          <i Type="PAS_TreeNode">
+          </i>
+        </OCtx>
+        <ICtx>
+          <i Type="Field">nmax = 100</i>
+          <i Type="Field">nmax1 = 50</i>
+          <i Type="Defs">const</i>
+        </ICtx>
+      </Node>
+      <Node Name="Reset">
+        <FileName>\PABCSystem.pas</FileName>
+        <Text>procedure Reset(f: Text; en: Encoding := Encoding.Default);</Text>
+        <OCtx>
+          <i Type="MethodHeader">procedure Reset ( f : Text ; en : Encoding )</i>
+          <i Type="PAS_TreeNode">
+          </i>
+        </OCtx>
+      </Node>
+      <Node Name="Odd">
+        <FileName>\PABCSystem.pas</FileName>
+        <Text>function Odd(i: byte): boolean;</Text>
+        <OCtx>
+          <i Type="MethodHeader">function Odd ( i : byte ) : boolean</i>
+          <i Type="PAS_TreeNode">
+          </i>
+        </OCtx>
+      </Node>
+      <Node Name="Cplx">
+        <FileName>\PABCSystem.pas</FileName>
+        <Text>function Cplx(re,im: real): Complex;</Text>
+        <OCtx>
+          <i Type="MethodHeader">function Cplx ( re , im : real ) : Complex</i>
+          <i Type="PAS_TreeNode">
+          </i>
+        </OCtx>
+      </Node>
+      <Node Name="succ">
+        <FileName>\PABCSystem.pas</FileName>
+        <Text>function succ(x: integer): integer;</Text>
+        <OCtx>
+          <i Type="MethodHeader">function succ ( x : integer ) : integer</i>
+          <i Type="PAS_TreeNode">
+          </i>
+        </OCtx>
+      </Node>
+      <Node Name="SeqBase class">
+        <FileName>\PABCSystem.pas</FileName>
+        <Text>SeqBase = class(IEnumerable&lt;object&gt;,IEnumerator&lt;object&gt;)</Text>
+        <OCtx>
+          <i Type="Class">SeqBase = class ( IEnumerable &lt; object &gt; , IEnumerator &lt; object &gt; )</i>
+          <i Type="Defs">type</i>
+          <i Type="PAS_TreeNode">
+          </i>
+        </OCtx>
+        <ICtx>
+          <i Type="ClassMethod">function System . Collections . IEnumerable . GetEnumerator ( ) : System . Collections . IEnumerator</i>
+          <i Type="ClassMethod">function GetEnumerator ( ) : IEnumerator &lt; object &gt;</i>
+          <i Type="ClassMethod">function get_Current : object virtual</i>
+          <i Type="ClassMethod">function System . Collections . IEnumerator . get_Current ( ) : object</i>
+          <i Type="ClassMethod">function MoveNext ( ) : boolean virtual</i>
+          <i Type="ClassMethod">procedure Dispose ( ) virtual</i>
+          <i Type="ClassMethod">procedure Reset ( )</i>
+        </ICtx>
+      </Node>
+      <Node Name="Print&lt;T&gt;(Self: array [,] of T">
+        <FileName>\PABCSystem.pas</FileName>
+        <Text>function Print&lt;T&gt;(Self: array [,] of T; w: integer := 4): array [,] of T; extensionmethod;</Text>
+        <OCtx>
+          <i Type="Method">function Print &lt; T &gt; ( Self : array [ , ] of T ; w : integer : = 4 ) : array [ , ] of T extensionmethod</i>
+          <i Type="PAS_TreeNode">
+          </i>
+        </OCtx>
+      </Node>
+    </Items>
+  </Node>
+</AspectFile>

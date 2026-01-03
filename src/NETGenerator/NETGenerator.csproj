@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>PascalABCCompiler</RootNamespace>
+    
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+    
+  <ItemGroup>
+    <Compile Include="..\Configuration\GlobalAssemblyInfo.cs">
+      <Link>Config\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\CompilerTools\CompilerTools.csproj" />
+    <ProjectReference Include="..\Errors\Errors.csproj" />
+    <ProjectReference Include="..\SemanticTree\SemanticTree.csproj" />
+    <ProjectReference Include="..\StringConstants\StringConstants.csproj" />
+    <ProjectReference Include="..\TreeConverter\TreeConverter.csproj" />
+  </ItemGroup>
+</Project>

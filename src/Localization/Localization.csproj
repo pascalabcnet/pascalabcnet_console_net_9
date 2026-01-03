@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>PascalABCCompiler</RootNamespace>
+    
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Include="DefaultLang.resources" Visible="false" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <LangFiles Include="..\bin\Lng\Rus\**\*" />
+  </ItemGroup>
+  
+  <Target Name="MakeLangResFile" BeforeTargets="BeforeBuild" Inputs="@(LangFiles)" Outputs="DefaultLang.resources">
+    <Exec Command="cd ..\Utils\DefaultLanguageResMaker &amp; LanguageResMaker.exe" Condition="$(OS) == 'Windows_NT'" />
+
+    <Exec Command="cd ../Utils/DefaultLanguageResMaker &amp;&amp; mono LanguageResMaker.exe" Condition="$(OS) != 'Windows_NT'" />
+  </Target>
+</Project>

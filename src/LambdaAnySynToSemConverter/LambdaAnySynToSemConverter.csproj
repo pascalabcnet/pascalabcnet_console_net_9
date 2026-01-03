@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\SemanticTree\SemanticTree.csproj" />
+    <ProjectReference Include="..\SyntaxTree\SyntaxTree.csproj"/>
+    <ProjectReference Include="..\SyntaxVisitors\SyntaxVisitors.csproj" />
+    <ProjectReference Include="..\TreeConverter\TreeConverter.csproj" />
+  </ItemGroup>
+</Project>

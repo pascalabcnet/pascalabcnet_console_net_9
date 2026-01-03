@@ -1,0 +1,15 @@
+﻿!PASCALABCNET_FORUM=PascalABC.NET Forum
+!PASCALABCNET_TELEGRAM=PascalABC.NET Telegram Channel
+!PASCALABCNET_SITE=PascalABC.NET Site
+!PASCALABCNET_DEVELOPERS=Developers
+!DEVELOPERS=Lead Developer:
+!OK=OK
+!CANCEL=Cancel
+!YES=Yes
+!NO=No
+!ALL=All
+!CONFIRM=Confirm
+!ERROR=Error
+!FILE_NOT_FOUND{0}=File "{0}" not found.
+!WARNING=Warning
+!ERROR_ON_CREATE_DIRECTORY=Error when creating directory

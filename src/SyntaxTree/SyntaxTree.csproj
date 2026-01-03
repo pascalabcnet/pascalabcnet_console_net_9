@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
+    <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Configuration\GlobalAssemblyInfo.cs">
+      <Link>Config\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    
+    <Compile Remove="tree\HierarchyVisitor.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StringConstants\StringConstants.csproj" />
+  </ItemGroup>
+</Project>

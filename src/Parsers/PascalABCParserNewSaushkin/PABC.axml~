@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<AspectFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TreeRoot>
+    <Items>
+      <PointOfInterest>
+        <FileName>\ABCPascal.y</FileName>
+        <Text>pascal_set_const</Text>
+        <Name>pascal_set_const</Name>
+        <Items />
+        <Note />
+        <Context>
+          <ArrayOfString>
+            <string>tkSquareOpen</string>
+            <string>elem_list</string>
+            <string>tkSquareClose</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>pascal_set_const</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Section2</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Program</string>
+          </ArrayOfString>
+        </Context>
+        <ParserClassName>subRule</ParserClassName>
+      </PointOfInterest>
+      <PointOfInterest>
+        <FileName>\ABCPascal.y</FileName>
+        <Text>| ident_list tkColon type_ref tkAssignOrEqual typed_var_init_expression // typed_const_plus уже давно не константа :) Но сюда не попали Tuples, поскольку они конкурируют с дурацкими старыми инициализаторами массивов</Text>
+        <Name>typed_var_init_expression</Name>
+        <Items />
+        <Note />
+        <Context>
+          <ArrayOfString>
+            <string>typed_var_init_expression</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>ident_list</string>
+            <string>tkColon</string>
+            <string>type_ref</string>
+            <string>tkAssignOrEqual</string>
+            <string>typed_var_init_expression</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>var_decl_part</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Section2</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Program</string>
+          </ArrayOfString>
+        </Context>
+        <ParserClassName>subRulePart</ParserClassName>
+      </PointOfInterest>
+      <PointOfInterest>
+        <FileName>\ABCPascal.y</FileName>
+        <Text>const_relop</Text>
+        <Name>const_relop</Name>
+        <Items />
+        <Note />
+        <Context>
+          <ArrayOfString>
+            <string>tkEqual</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>const_relop</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Section2</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Program</string>
+          </ArrayOfString>
+        </Context>
+        <ParserClassName>subRule</ParserClassName>
+      </PointOfInterest>
+      <PointOfInterest>
+        <FileName>\ABCPascal.y</FileName>
+        <Text>relop</Text>
+        <Name>relop</Name>
+        <Items />
+        <Note />
+        <Context>
+          <ArrayOfString>
+            <string>tkEqual</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>relop</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Section2</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Program</string>
+          </ArrayOfString>
+        </Context>
+        <ParserClassName>subRule</ParserClassName>
+      </PointOfInterest>
+      <PointOfInterest>
+        <FileName>\ABCPascal.y</FileName>
+        <Text>relop_expr</Text>
+        <Name>relop_expr</Name>
+        <Items />
+        <Note />
+        <Context>
+          <ArrayOfString>
+            <string>simple_expr</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>relop_expr</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Section2</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Program</string>
+          </ArrayOfString>
+        </Context>
+        <ParserClassName>subRule</ParserClassName>
+      </PointOfInterest>
+      <PointOfInterest>
+        <FileName>\ABCPascal.y</FileName>
+        <Text>const_relop_expr</Text>
+        <Name>const_relop_expr</Name>
+        <Items />
+        <Note />
+        <Context>
+          <ArrayOfString>
+            <string>const_simple_expr</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>const_relop_expr</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Section2</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Program</string>
+          </ArrayOfString>
+        </Context>
+        <ParserClassName>subRule</ParserClassName>
+      </PointOfInterest>
+      <PointOfInterest>
+        <FileName>\ABCPascal.y</FileName>
+        <Text>: tkFunction func_name fp_list optional_method_modificators optional_where_section</Text>
+        <Name>optional_method_modificators</Name>
+        <Items />
+        <Note />
+        <Context>
+          <ArrayOfString>
+            <string>optional_method_modificators</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>tkFunction</string>
+            <string>func_name</string>
+            <string>fp_list</string>
+            <string>optional_method_modificators</string>
+            <string>optional_where_section</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>func_header</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Section2</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Program</string>
+          </ArrayOfString>
+        </Context>
+        <ParserClassName>subRulePart</ParserClassName>
+      </PointOfInterest>
+      <PointOfInterest>
+        <FileName>\ABCPascal.y</FileName>
+        <Text>inclass_proc_func_decl_noclass</Text>
+        <Name>inclass_proc_func_decl_noclass</Name>
+        <Items />
+        <Note />
+        <Context>
+          <ArrayOfString>
+            <string>proc_func_header</string>
+            <string>inclass_block</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>inclass_proc_func_decl_noclass</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Section2</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Program</string>
+          </ArrayOfString>
+        </Context>
+        <ParserClassName>subRule</ParserClassName>
+      </PointOfInterest>
+      <PointOfInterest>
+        <FileName>\ABCPascal.y</FileName>
+        <Text>proc_func_decl_noclass</Text>
+        <Name>proc_func_decl_noclass</Name>
+        <Items />
+        <Note />
+        <Context>
+          <ArrayOfString>
+            <string>proc_func_header</string>
+            <string>proc_func_external_block</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>proc_func_decl_noclass</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Section2</string>
+          </ArrayOfString>
+          <ArrayOfString>
+            <string>Program</string>
+          </ArrayOfString>
+        </Context>
+        <ParserClassName>subRule</ParserClassName>
+      </PointOfInterest>
+    </Items>
+    <Context />
+  </TreeRoot>
+</AspectFile>

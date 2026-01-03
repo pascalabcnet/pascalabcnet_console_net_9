@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PascalABCCompiler</RootNamespace>
+    
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AssemblyName>pabcnetcclear</AssemblyName>
+    
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Compiler\Compiler.csproj" />
+    <ProjectReference Include="..\LanguageIntegrator\LanguageIntegrator.csproj" />
+  </ItemGroup>
+</Project>
