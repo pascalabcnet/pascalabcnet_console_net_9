@@ -2641,7 +2641,21 @@ namespace PascalABCCompiler
                 directives.Add(new compiler_directive("reference", "%GAC%\\PABCRtl.dll", null, "."));
                 AddReferencesToNetSystemLibraries(compilationUnit, directives);
             }
-
+#if NET
+            compiler_directive mscorlib_directive = null;
+            foreach (compiler_directive directive in directives)
+            {
+                if (directive.name != "REFERENCE")
+                    continue;
+                if (directive.directive == "%GAC%\\mscorlib.dll")
+                {
+                    directive.directive = "%GAC%\\System.Private.CoreLib.dll";
+                    mscorlib_directive = directive;
+                }   
+                else if (directive.directive == "%GAC%\\System.dll")
+                    directive.directive = "%GAC%\\System.Runtime.dll";
+            }
+#endif
             var referenceDirectives = new List<compiler_directive>();
             foreach (compiler_directive directive in directives)
             {
@@ -2651,6 +2665,25 @@ namespace PascalABCCompiler
                     referenceDirectives.Add(directive);
                 }
             }
+
+#if NET
+            if (mscorlib_directive != null)
+            {
+                string dir = Path.GetDirectoryName(typeof(int).Assembly.Location);
+                foreach (var dll in Directory.GetFiles(dir, "System.*.dll"))
+                {
+                    if (Path.GetFileName(dll) == "System.Private.CoreLib.dll")
+                        continue;
+                    if (Path.GetFileName(dll) == "System.Runtime.dll")
+                        continue;
+                    if (Path.GetFileName(dll) == "System.IO.Compression.Native.dll")
+                        continue;
+                    referenceDirectives.Add(new compiler_directive("REFERENCE", "%GAC%\\"+Path.GetFileName(dll), mscorlib_directive.location, mscorlib_directive.location.document.file_name));
+                }
+               
+            }
+
+#endif
 
             if (CompilerOptions.ProjectCompiled)
             {

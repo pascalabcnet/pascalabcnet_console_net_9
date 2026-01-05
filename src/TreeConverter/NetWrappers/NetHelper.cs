@@ -411,16 +411,23 @@ namespace PascalABCCompiler.NetHelper
                         type_extensions.Remove(t);
 			    }
 			}
-			//if (!System.IO.Path.GetFileName(name).ToLower().Contains("microsoft.directx"))
-            try
-            {
-                var bytes = File.ReadAllBytes(name);
-                a = Assembly.Load(bytes);
-            }
-            catch (Exception ex)
-            {
-                a = System.Reflection.Assembly.LoadFrom(name);
-            }
+            //if (!System.IO.Path.GetFileName(name).ToLower().Contains("microsoft.directx"))
+#if NET
+            if (name.IndexOf("System.Private.CoreLib.dll") != -1)
+                a = System.Reflection.Assembly.Load("System.Private.CoreLib");
+            else if (name.IndexOf("System.Runtime.dll") != -1)
+                a = System.Reflection.Assembly.Load("System.Runtime");
+            else
+#endif
+                try
+                {
+                    var bytes = File.ReadAllBytes(name);
+                    a = Assembly.Load(bytes);
+                }
+                catch (Exception ex)
+                {
+                    a = System.Reflection.Assembly.LoadFrom(name);
+                }
             ass_name_cache[name] = a;
             assm_full_paths[a] = name;
             file_dates[a] = System.IO.File.GetLastWriteTime(name);
