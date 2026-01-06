@@ -197,6 +197,20 @@ namespace PascalABCCompiler.NETGenerator
         private ISymbolDocumentWriter new_doc;
         private bool pabc_rtl_converted = false;
         bool has_unmanaged_resources = false;
+#if NET
+        string runtimeConfig = @"{
+  ""runtimeOptions"": {
+    ""tfm"": ""net9.0"",
+    ""framework"": {
+      ""name"": ""Microsoft.NETCore.App"",
+      ""version"": ""9.0.0""
+    },
+    ""configProperties"": {
+      ""System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization"": false
+    }
+  }
+}";
+#endif
 
         private void CheckLocation(SemanticTree.ILocation Location)
         {
@@ -1275,16 +1289,17 @@ namespace PascalABCCompiler.NETGenerator
 
             PEHeaderBuilder headerBuilder;
             MethodDefinitionHandle entryPointHandle = default;
-
+            // Генерируем метаданные
+            var metadata = ab.GenerateMetadata(out var ilStream, out var fieldData);
             switch (comp_opt.target)
             {
                 case TargetType.Exe:
-                    headerBuilder = new PEHeaderBuilder(subsystem: Subsystem.WindowsCui); // Console
+                    headerBuilder = new PEHeaderBuilder(subsystem: Subsystem.WindowsCui, imageCharacteristics: Characteristics.ExecutableImage); // Console
                     entryPointHandle = MetadataTokens.MethodDefinitionHandle(entry_meth.MetadataToken);
                     break;
 
                 case TargetType.WinExe:
-                    headerBuilder = new PEHeaderBuilder(subsystem: Subsystem.WindowsGui); // Windows
+                    headerBuilder = new PEHeaderBuilder(subsystem: Subsystem.WindowsGui, imageCharacteristics: Characteristics.ExecutableImage); // Windows
                     entryPointHandle = MetadataTokens.MethodDefinitionHandle(entry_meth.MetadataToken);
                     break;
 
@@ -1296,8 +1311,7 @@ namespace PascalABCCompiler.NETGenerator
                     throw new InvalidOperationException("Unsupported target type");
             }
 
-            // Генерируем метаданные
-            var metadata = ab.GenerateMetadata(out var ilStream, out var fieldData);
+            
 
             // Генерация PE
             var peBuilder = new ManagedPEBuilder(
@@ -1314,6 +1328,7 @@ namespace PascalABCCompiler.NETGenerator
             var outputFileName = comp_opt.target == TargetType.Dll ? an.Name + ".dll" : an.Name + ".exe";
             using var fs = new FileStream(outputFileName, FileMode.Create, FileAccess.Write);
             peBlob.WriteContentTo(fs);
+            File.WriteAllText(an.Name+".runtimeconfig.json", runtimeConfig);
 #elif NET48
             int tries = 0;
             bool not_done = true;
@@ -6158,8 +6173,10 @@ namespace PascalABCCompiler.NETGenerator
             {
                 if (gen_left_brackets)
                     MarkSequencePoint(value.LeftLogicalBracketLocation);
+#if !NET
                 else
                     il.MarkSequencePoint(doc, 0xFeeFee, 0xFeeFee, 0xFeeFee, 0xFeeFee);
+#endif
                 //il.MarkSequencePoint(doc,0xFFFFFF,0xFFFFFF,0xFFFFFF,0xFFFFFF);
                 il.Emit(OpCodes.Nop);
             }
@@ -6206,8 +6223,10 @@ namespace PascalABCCompiler.NETGenerator
             {
                 if (gen_left_brackets || value.LeftLogicalBracketLocation == null)
                     MarkSequencePoint(value.LeftLogicalBracketLocation);
+#if !NET
                 else
                     il.MarkSequencePoint(doc, 0xFeeFee, 0xFeeFee, 0xFeeFee, 0xFeeFee);
+#endif
                 il.Emit(OpCodes.Nop);
             }
             
@@ -6526,7 +6545,7 @@ namespace PascalABCCompiler.NETGenerator
             ConvertStatement(value.then_body);
             il.Emit(OpCodes.Br, EndLabel);
             if (value.else_body == null && next_location != null)
-                il.MarkSequencePoint(doc, next_location.begin_line_num, 1, next_location.begin_line_num, next_location.begin_column_num);
+                il.MarkSequencePoint(doc, next_location.begin_line_num, 1, next_location.begin_line_num, next_location.end_column_num);
             il.MarkLabel(FalseLabel);
             if (value.else_body != null)
                 ConvertStatement(value.else_body);
@@ -11820,7 +11839,9 @@ namespace PascalABCCompiler.NETGenerator
             ConvertStatement(value.Body);
             LeaveSafeBlock(safe_block);
             //MarkSequencePoint(value.Location);
+#if !NET
             il.MarkSequencePoint(doc, 0xFeeFee, 0xFeeFee, 0xFeeFee, 0xFeeFee);
+#endif
             il.MarkLabel(l2);
             if (lb.LocalType.IsValueType)
                 il.Emit(OpCodes.Ldloca, lb);
