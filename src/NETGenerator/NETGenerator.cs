@@ -16,6 +16,8 @@ using System.Text;
 using System.Threading;
 using PascalABCCompiler.NetHelper;
 using PascalABCCompiler.SemanticTree;
+using System.Collections.Immutable;
+
 
 #if NET
 using System.Reflection.Metadata.Ecma335;
@@ -234,6 +236,24 @@ namespace PascalABCCompiler.NETGenerator
                 }
             }
         }
+
+#if NET
+        private DebugDirectoryBuilder GeneratePdb(string pdbFileName, MetadataBuilder pdbBuilder, ImmutableArray<int> rowCounts, MethodDefinitionHandle entryPointHandle)
+        {
+            BlobBuilder portablePdbBlob = new BlobBuilder();
+            PortablePdbBuilder portablePdbBuilder = new PortablePdbBuilder(pdbBuilder, rowCounts, entryPointHandle);
+            BlobContentId pdbContentId = portablePdbBuilder.Serialize(portablePdbBlob);
+            // In case saving PDB to a file
+            using FileStream fileStream = new FileStream(pdbFileName, FileMode.Create, FileAccess.Write);
+            portablePdbBlob.WriteContentTo(fileStream);
+
+            DebugDirectoryBuilder debugDirectoryBuilder = new DebugDirectoryBuilder();
+            debugDirectoryBuilder.AddCodeViewEntry(pdbFileName, pdbContentId, portablePdbBuilder.FormatVersion);
+            // In case embedded in PE:
+            // debugDirectoryBuilder.AddEmbeddedPortablePdbEntry(portablePdbBlob, portablePdbBuilder.FormatVersion);
+            return debugDirectoryBuilder;
+        }
+#endif
 
         private bool OnNextLine(ILocation loc)
         {
@@ -1290,7 +1310,7 @@ namespace PascalABCCompiler.NETGenerator
             PEHeaderBuilder headerBuilder;
             MethodDefinitionHandle entryPointHandle = default;
             // Генерируем метаданные
-            var metadata = ab.GenerateMetadata(out var ilStream, out var fieldData);
+            var metadata = ab.GenerateMetadata(out var ilStream, out var fieldData, out MetadataBuilder pdbBuilder);
             switch (comp_opt.target)
             {
                 case TargetType.Exe:
@@ -1311,7 +1331,8 @@ namespace PascalABCCompiler.NETGenerator
                     throw new InvalidOperationException("Unsupported target type");
             }
 
-            
+
+            DebugDirectoryBuilder debugDirectoryBuilder = GeneratePdb(an.Name+".pdb", pdbBuilder, metadata.GetRowCounts(), entryPointHandle);
 
             // Генерация PE
             var peBuilder = new ManagedPEBuilder(
@@ -1319,6 +1340,7 @@ namespace PascalABCCompiler.NETGenerator
                 metadataRootBuilder: new MetadataRootBuilder(metadata),
                 ilStream: ilStream,
                 mappedFieldData: fieldData,
+                debugDirectoryBuilder: debugDirectoryBuilder,
                 entryPoint: entryPointHandle // = default для DLL
             );
 
