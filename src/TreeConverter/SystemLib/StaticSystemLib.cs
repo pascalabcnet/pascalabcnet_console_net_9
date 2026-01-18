@@ -1190,15 +1190,10 @@ namespace PascalABCCompiler.SystemLibrary
             _icollection1_interface = compiled_type_node.get_type_node(typeof(ICollection<>));
             _ienumerable1_interface = compiled_type_node.get_type_node(typeof(IEnumerable<>));
             _assert_method = compiled_function_node.get_compiled_method(typeof(System.Diagnostics.Debug).GetMethod("Assert",new Type[1]{typeof(bool)}));
+           
 
-#if NET48
-            _decimal_type = compiled_type_node.get_type_node(typeof(decimal), symtab);
-            //_decimal_type.SetName(StringConstants.decimal_type_name);
-            make_assign_operator(_decimal_type, SemanticTree.basic_function_type.objassign);
-#elif NET
-            // SSM 2026 - не знаю, что делать с типом decimal в NET 9 - из за него ошибка
-#endif
 
+            
             _bool_type = compiled_type_node.get_type_node(typeof(bool), symtab);
             _bool_type.SetName(StringConstants.bool_type_name);
 
@@ -2053,7 +2048,17 @@ namespace PascalABCCompiler.SystemLibrary
             mark_type_as_ordinal(_bool_type, SemanticTree.basic_function_type.boolinc, SemanticTree.basic_function_type.booldec,
                 SemanticTree.basic_function_type.boolsinc, SemanticTree.basic_function_type.boolsdec,
                 new bool_const_node(false, null), new bool_const_node(true, null), _bool_to_int, bool_to_int);
-            
+
+#if NET48
+            _decimal_type = compiled_type_node.get_type_node(typeof(decimal), symtab);
+            //_decimal_type.SetName(StringConstants.decimal_type_name);
+            make_assign_operator(_decimal_type, SemanticTree.basic_function_type.objassign);
+#elif NET
+            // SSM 2026 - не знаю, что делать с типом decimal в NET 9 - из за него ошибка
+            _decimal_type = compiled_type_node.get_type_node(typeof(decimal), symtab);
+            //_decimal_type.SetName(StringConstants.decimal_type_name);
+            make_assign_operator(_decimal_type, SemanticTree.basic_function_type.objassign);
+#endif
             _empty_string = new string_const_node(string.Empty, null);
             _dllimport_type = compiled_type_node.get_type_node(typeof(System.Runtime.InteropServices.DllImportAttribute));
             _flags_attribute_type = compiled_type_node.get_type_node(typeof(System.FlagsAttribute));
