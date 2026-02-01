@@ -1347,10 +1347,10 @@ namespace PascalABCCompiler.NETGenerator
             var peBlob = new BlobBuilder();
             peBuilder.Serialize(peBlob);
 
-            var outputFileName = comp_opt.target == TargetType.Dll ? an.Name + ".dll" : an.Name + ".exe";
+            var outputFileName = TargetFileName;//Pathcomp_opt.target == TargetType.Dll ? an.Name + ".dll" : an.Name + ".exe";
             using var fs = new FileStream(outputFileName, FileMode.Create, FileAccess.Write);
             peBlob.WriteContentTo(fs);
-            File.WriteAllText(an.Name+".runtimeconfig.json", runtimeConfig);
+            File.WriteAllText(Path.Combine(Path.GetDirectoryName(TargetFileName), an.Name+".runtimeconfig.json"), runtimeConfig);
 #elif NET48
             int tries = 0;
             bool not_done = true;
