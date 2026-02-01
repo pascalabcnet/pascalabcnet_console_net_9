@@ -3886,6 +3886,12 @@ namespace PascalABCCompiler
             string tn = Path.Combine(standartAssemblyPath, name);
             if (File.Exists(tn))
                 return tn;
+            if (standartAssemblyPath.IndexOf("Microsoft.NETCore.App") != -1)
+            {
+                tn = Path.Combine(standartAssemblyPath.Replace("Microsoft.NETCore.App", "Microsoft.WindowsDesktop.App"), name);
+                if (File.Exists(tn))
+                    return tn;
+            }
             if (Environment.OSVersion.Platform != PlatformID.Unix && Environment.OSVersion.Platform != PlatformID.MacOSX)
             {
                 string windir = Path.Combine(Environment.GetEnvironmentVariable("windir"), "Microsoft.NET");

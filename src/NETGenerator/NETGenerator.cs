@@ -200,11 +200,24 @@ namespace PascalABCCompiler.NETGenerator
         private bool pabc_rtl_converted = false;
         bool has_unmanaged_resources = false;
 #if NET
-        string runtimeConfig = @"{
+        string runtimeConfigCore = @"{
   ""runtimeOptions"": {
     ""tfm"": ""net9.0"",
     ""framework"": {
       ""name"": ""Microsoft.NETCore.App"",
+      ""version"": ""9.0.0""
+    },
+    ""configProperties"": {
+      ""System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization"": false
+    }
+  }
+}";
+
+        string runtimeConfigWindowsDesktop = @"{
+  ""runtimeOptions"": {
+    ""tfm"": ""net9.0"",
+    ""framework"": {
+      ""name"": ""Microsoft.WindowsDesktop.App"",
       ""version"": ""9.0.0""
     },
     ""configProperties"": {
@@ -1350,7 +1363,7 @@ namespace PascalABCCompiler.NETGenerator
             var outputFileName = TargetFileName;//Pathcomp_opt.target == TargetType.Dll ? an.Name + ".dll" : an.Name + ".exe";
             using var fs = new FileStream(outputFileName, FileMode.Create, FileAccess.Write);
             peBlob.WriteContentTo(fs);
-            File.WriteAllText(Path.Combine(Path.GetDirectoryName(TargetFileName), an.Name+".runtimeconfig.json"), runtimeConfig);
+            File.WriteAllText(Path.Combine(Path.GetDirectoryName(TargetFileName), an.Name+".runtimeconfig.json"), comp_opt.target == TargetType.WinExe ? runtimeConfigWindowsDesktop : runtimeConfigCore);
 #elif NET48
             int tries = 0;
             bool not_done = true;
