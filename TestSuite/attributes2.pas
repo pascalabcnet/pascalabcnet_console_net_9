@@ -1,5 +1,5 @@
 ﻿//nopabcrtl
-uses NUnitABC;
+{uses NUnitABC;
 
 type TClass = class
 public 
@@ -11,4 +11,7 @@ end;
 
 begin
   TClass.TestPrime4(2);
+end.}
+
+begin
 end.

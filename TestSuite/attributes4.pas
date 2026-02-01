@@ -2,7 +2,7 @@
 
  type 
   attrAttribute =  class(Attribute)
-    constructor (params p1: array of System.Activator);
+    constructor (params p1: array of Attribute);
     begin end;
   end;
   

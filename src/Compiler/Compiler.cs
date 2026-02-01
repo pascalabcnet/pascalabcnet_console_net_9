@@ -2670,7 +2670,8 @@ namespace PascalABCCompiler
             if (mscorlib_directive != null)
             {
                 string dir = Path.GetDirectoryName(typeof(int).Assembly.Location);
-                foreach (var dll in Directory.GetFiles(dir, "System.*.dll"))
+                var dllFiles = Directory.GetFiles(dir, "System.*.dll");
+                foreach (var dll in dllFiles)
                 {
                     if (Path.GetFileName(dll) == "System.Private.CoreLib.dll")
                         continue;
@@ -2678,7 +2679,9 @@ namespace PascalABCCompiler
                         continue;
                     if (Path.GetFileName(dll) == "System.IO.Compression.Native.dll")
                         continue;
-                    referenceDirectives.Add(new compiler_directive("REFERENCE", "%GAC%\\"+Path.GetFileName(dll), mscorlib_directive.location, mscorlib_directive.location.document.file_name));
+                    var cd = new compiler_directive("REFERENCE", "%GAC%\\" + Path.GetFileName(dll), mscorlib_directive.location, mscorlib_directive.location.document.file_name);
+                    directives.Add(cd);
+                    referenceDirectives.Add(cd);
                 }
                
             }
