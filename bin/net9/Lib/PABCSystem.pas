@@ -22,7 +22,7 @@ uses
   System.IO, 
   System.Collections, 
   System.Collections.Generic,
-  System;
+   System;
 
 //{{{doc: Начало секции стандартных констант для документации }}} 
 

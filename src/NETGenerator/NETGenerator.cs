@@ -2665,7 +2665,18 @@ namespace PascalABCCompiler.NETGenerator
                         AddTypeInstanceToFunction(GetGenericFunctionContainer(value), igtn);
                         return;
                     }
-                    iparams.Add(tinfo.tp);
+                    Type genericParameterType = tinfo.tp;
+#if NET
+                    // PersistedAssemblyBuilder cannot resolve members of a generic type
+                    // instantiated with EnumBuilder. Use the TypeBuilder wrapped by it.
+                    if (genericParameterType is EnumBuilder enumBuilder)
+                    {
+                        FieldInfo typeBuilderField = enumBuilder.GetType().GetFields(BindingFlags.Instance | BindingFlags.NonPublic)
+                            .First(field => typeof(TypeBuilder).IsAssignableFrom(field.FieldType));
+                        genericParameterType = (Type)typeBuilderField.GetValue(enumBuilder);
+                    }
+#endif
+                    iparams.Add(genericParameterType);
                 }
                 //Запрашиваем инстанцию
                 //ICompiledTypeNode icompiled_type = igtn.original_generic as ICompiledTypeNode;
@@ -11158,7 +11169,8 @@ namespace PascalABCCompiler.NETGenerator
                     NETGeneratorTools.LdcIntConst(il, case_labels[i].low_bound);
                     il.Emit(OpCodes.Sub);
                 }
-                il.Emit(OpCodes.Switch, case_labels[i].labels);
+                if (case_labels[i].labels.Length > 0) // SSM 2026/07/30 - здесь был 0 и следующий Emit в net 9.0 падал!
+                    il.Emit(OpCodes.Switch, case_labels[i].labels);
             }
             il.MarkLabel(jump_def_label);
             ConvertRangedSelectors(value, end_label, lb);

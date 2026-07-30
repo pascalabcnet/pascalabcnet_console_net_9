@@ -3,7 +3,7 @@
 
 /// Стандартный модуль
 /// !! System unit
-unit PABCSystem;
+unit  PABCSystem;
 
 {$zerobasedstrings off}
 

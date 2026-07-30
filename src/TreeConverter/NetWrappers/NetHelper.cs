@@ -372,7 +372,7 @@ namespace PascalABCCompiler.NetHelper
                 ass_name_cache.TryGetValue(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), name), out a);
             if (a != null)
 			{
-				if (System.IO.File.GetLastWriteTime(name) == file_dates[a])
+				//if (System.IO.File.GetLastWriteTime(name) == file_dates[a])
 					return a;
 				namespace_assemblies.Remove(a);
 				assemblies.Remove(a);

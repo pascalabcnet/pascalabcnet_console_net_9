@@ -1,1 +1,2 @@
 dotnet ..\bin\net9\TestRunner.exe
+pause
