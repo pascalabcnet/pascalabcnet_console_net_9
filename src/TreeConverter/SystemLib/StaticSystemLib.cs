@@ -2054,7 +2054,7 @@ namespace PascalABCCompiler.SystemLibrary
             //_decimal_type.SetName(StringConstants.decimal_type_name);
             make_assign_operator(_decimal_type, SemanticTree.basic_function_type.objassign);
 #elif NET
-            // SSM 2026 - не знаю, что делать с типом decimal в NET 9 - из за него ошибка
+            // SSM 2026 - не знаю, что делать с типом decimal в NET - из за него ошибка
             _decimal_type = compiled_type_node.get_type_node(typeof(decimal), symtab);
             //_decimal_type.SetName(StringConstants.decimal_type_name);
             make_assign_operator(_decimal_type, SemanticTree.basic_function_type.objassign);

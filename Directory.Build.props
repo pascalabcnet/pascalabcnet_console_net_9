@@ -2,18 +2,18 @@
 <Project>
   <PropertyGroup>
     <!-- Для Visual Studio используем только одну цель -->
-    <TargetFramework Condition="'$(BuildingInsideVisualStudio)' == 'true'">net9.0</TargetFramework>
+    <TargetFramework Condition="'$(BuildingInsideVisualStudio)' == 'true'">net10.0</TargetFramework>
     <!-- Для командной строки - обе цели -->
-    <TargetFrameworks Condition="'$(BuildingInsideVisualStudio)' != 'true'">net48;net9.0</TargetFrameworks>
+    <TargetFrameworks Condition="'$(BuildingInsideVisualStudio)' != 'true'">net48;net10.0</TargetFrameworks>
 
     <SolutionRoot>$(MSBuildThisFileDirectory)</SolutionRoot>
 
     <!-- Выходные пути для DLL/EXE -->
     <OutputPath Condition="'$(TargetFramework)' == 'net48'">$(SolutionRoot)bin\net48\</OutputPath>
-    <OutputPath Condition="'$(TargetFramework)' == 'net9.0'">$(SolutionRoot)bin\net9\</OutputPath>
+    <OutputPath Condition="'$(TargetFramework)' == 'net10.0'">$(SolutionRoot)bin\net10\</OutputPath>
 
     <!-- Папка с общими ресурсами -->
-    <SharedResourcesPath>..\bin\shared\</SharedResourcesPath>
+    <SharedResourcesPath>$(SolutionRoot)bin\shared\</SharedResourcesPath>
     
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 
@@ -23,6 +23,13 @@
     
     <!-- Символы условной компиляции -->
     <DefineConstants Condition="'$(TargetFramework)' == 'net48'">NETFRAMEWORK;NET48</DefineConstants>
-    <DefineConstants Condition="'$(TargetFramework)' == 'net9.0'">NET;NET9_0;NETCOREAPP</DefineConstants>
+    <DefineConstants Condition="'$(TargetFramework)' == 'net10.0'">NET;NET10_0;NETCOREAPP</DefineConstants>
   </PropertyGroup>
+
+  <ItemGroup Condition="'$(MSBuildProjectName)' == 'PABCNETC' Or '$(MSBuildProjectName)' == 'PABCNETCclear'">
+    <Content Include="$(SharedResourcesPath)**\*">
+      <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>

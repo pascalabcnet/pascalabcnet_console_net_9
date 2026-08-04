@@ -202,10 +202,10 @@ namespace PascalABCCompiler.NETGenerator
 #if NET
         string runtimeConfigCore = @"{
   ""runtimeOptions"": {
-    ""tfm"": ""net9.0"",
+    ""tfm"": ""net10.0"",
     ""framework"": {
       ""name"": ""Microsoft.NETCore.App"",
-      ""version"": ""9.0.0""
+      ""version"": ""10.0.0""
     },
     ""configProperties"": {
       ""System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization"": false
@@ -215,10 +215,10 @@ namespace PascalABCCompiler.NETGenerator
 
         string runtimeConfigWindowsDesktop = @"{
   ""runtimeOptions"": {
-    ""tfm"": ""net9.0"",
+    ""tfm"": ""net10.0"",
     ""framework"": {
       ""name"": ""Microsoft.WindowsDesktop.App"",
-      ""version"": ""9.0.0""
+      ""version"": ""10.0.0""
     },
     ""configProperties"": {
       ""System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization"": false
@@ -316,6 +316,8 @@ namespace PascalABCCompiler.NETGenerator
 
         protected void MarkSequencePoint(ILGenerator ilg, int bl, int bc, int el, int ec)
         {
+            if (!save_debug_info || doc == null)
+                return;
             //if (make_next_spoint)
             ilg.MarkSequencePoint(doc, bl, bc, el, ec + 1);
             make_next_spoint = true;
@@ -608,10 +610,10 @@ namespace PascalABCCompiler.NETGenerator
                 Directory.Delete(publish_dir, true);
             Directory.CreateDirectory(publish_dir);
             StringBuilder sb = new StringBuilder();
-            string framework = "net9.0";
+            string framework = "net10.0";
             if (comp_opt.target == TargetType.WinExe)
             {
-                framework = "net9.0-windows";
+                framework = "net10.0-windows";
                 sb.AppendLine("<Project Sdk=\"Microsoft.NET.Sdk.WindowsDesktop\">");
                 sb.AppendLine("<PropertyGroup><PublishAot>true</PublishAot><PublishTrimmed>true</PublishTrimmed><OutputType>WinExe</OutputType><TargetFramework>" + framework + "</TargetFramework><UseWindowsForms>true</UseWindowsForms></PropertyGroup>");
                 sb.AppendLine("<ItemGroup><Reference Include = \"" + an.Name + "\"><HintPath>" + Path.Combine(dir, an.Name) + ".dll" + "</HintPath></Reference></ItemGroup>");
@@ -1203,7 +1205,7 @@ namespace PascalABCCompiler.NETGenerator
             // SSM 07.02.20  ?
             entry_type?.CreateType();
 #if NET48
-// SSM 11.06.25 - это комментирую - в NET 9 точка входа будет задана позднее
+// SSM 11.06.25 - это комментирую - в NET точка входа будет задана позднее
             switch (comp_opt.target)
             {
                 case TargetType.Exe: ab.SetEntryPoint(entry_meth, PEFileKinds.ConsoleApplication); break;
@@ -1301,7 +1303,7 @@ namespace PascalABCCompiler.NETGenerator
                     FileStream stream = File.OpenRead(resname);
                     ResStreams.Add(stream);
 #if NET48
-// Не знаю, что делать с ресурсами в net 9 - надо разбираться
+// Не знаю, что делать с ресурсами в NET - надо разбираться
                     mb.DefineManifestResource(Path.GetFileName(resname), stream, ResourceAttributes.Public);
 #endif
                 }
@@ -6590,7 +6592,7 @@ namespace PascalABCCompiler.NETGenerator
 
             ConvertStatement(value.then_body);
             il.Emit(OpCodes.Br, EndLabel);
-            if (value.else_body == null && next_location != null)
+            if (save_debug_info && doc != null && value.else_body == null && next_location != null)
                 il.MarkSequencePoint(doc, next_location.begin_line_num, 1, next_location.begin_line_num, next_location.end_column_num);
             il.MarkLabel(FalseLabel);
             if (value.else_body != null)
@@ -11782,15 +11784,24 @@ namespace PascalABCCompiler.NETGenerator
                 // например IEnumerable<MyType>, array of MyType
                 if (helper.IsPascalType(elementType))
                 {
+                    Type genericElementType = elementType;
+#if NET
+                    if (genericElementType is EnumBuilder enumBuilder)
+                    {
+                        FieldInfo typeBuilderField = enumBuilder.GetType().GetFields(BindingFlags.Instance | BindingFlags.NonPublic)
+                            .First(field => typeof(TypeBuilder).IsAssignableFrom(field.FieldType));
+                        genericElementType = (Type)typeBuilderField.GetValue(enumBuilder);
+                    }
+#endif
                     enumer_mi = TypeBuilder.GetMethod(
-                        TypeFactory.IEnumerableGenericType.MakeGenericType(elementType),
+                        TypeFactory.IEnumerableGenericType.MakeGenericType(genericElementType),
                         TypeFactory.IEnumerableGenericGetEnumeratorMethod
                     );
 
                     // IEnumerator<elementType>
                     return_type = enumer_mi.ReturnType
                         .GetGenericTypeDefinition()
-                        .MakeGenericType(elementType);
+                        .MakeGenericType(genericElementType);
                 }
                 // для полностью скомпилированных типов TypeBuilder не требуется
                 // IEnumerable<integer>, array of string

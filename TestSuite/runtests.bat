@@ -1,2 +1,2 @@
-dotnet ..\bin\net9\TestRunner.exe
+dotnet ..\bin\net10\TestRunner.exe
 pause

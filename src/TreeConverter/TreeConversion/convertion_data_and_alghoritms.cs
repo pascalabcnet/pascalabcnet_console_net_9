@@ -2475,6 +2475,15 @@ namespace PascalABCCompiler.TreeConverter
                 }
             }
 
+            // get_conversions changes the inferred lambda state while checking a candidate.
+            // Reflection does not guarantee overload order, and Task.Run overloads have a
+            // different order in .NET Core. Check inferred generic instances last so that a
+            // less suitable non-generic overload cannot leave its expected return type in the lambda.
+            if (syntax_nodes_parameters != null && syntax_nodes_parameters.Any(p => p is SyntaxTree.function_lambda_definition))
+                set_of_possible_functions = set_of_possible_functions
+                    .OrderBy(f => f.is_generic_function_instance ? 1 : 0)
+                    .ToList();
+
             if (lastFailedWhileTryingToCompileLambdaBodyWithGivenParametersException != null
                 && set_of_possible_functions.Count == 0
                 && indefinits.Count == 0)
